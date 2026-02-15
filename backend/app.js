@@ -130,7 +130,7 @@ app.delete('/transaction/:transactionId',authenticateToken,async (request,respon
     const {transactionId}=request.params
     const delteQuery=`delete from transactions where id=?;`
     await db.run(delteQuery,transactionId)
-    response.send('User Deleted Successfully')
+    response.send('Transaction Deleted Successfully')
 })
 
 app.get('/transaction/amount',authenticateToken,async (request,response)=>{
@@ -139,17 +139,4 @@ app.get('/transaction/amount',authenticateToken,async (request,response)=>{
     transactions where userId=? group by category;`
     const amountAndCategory=await db.all(fetchAmountQuery,userId)
     response.send(amountAndCategory)
-})
-
-app.delete('/user/:userId',async (request,response)=>{
-    const {userId}=request.params
-    const delteQuery=`delete from users where id=?;`
-    await db.run(delteQuery,userId)
-    response.send('Transaction Deleted Successfully')
-})
-
-
-app.get('/data/',authenticateToken,async (request,response)=>{
-    const data=await db.all(`select * from users;`)
-    response.send(data)
 })
