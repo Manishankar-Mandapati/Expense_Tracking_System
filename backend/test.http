@@ -2,10 +2,61 @@ POST http://localhost:3000/register/
 Content-Type: application/json
 
 {
- "email":"test@gmail.com",
+ "email":"james@gmail.com",
  "password":"12345678"
 }
 
 ###
 
 GET http://localhost:3000/data/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEwNzgyNDJ9.UAJuQwlu3c2IPUiVh9HNlXv_fMZyFWrmTrIBzEiQ_AY
+
+###
+POST http://localhost:3000/login/
+Content-Type: application/json
+
+{
+ "email":"test@gmail.com",
+ "password":"12345678"
+}
+###
+DELETE http://localhost:3000/user/3
+
+###
+
+POST http://localhost:3000/transaction/
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEwNzgyNDJ9.UAJuQwlu3c2IPUiVh9HNlXv_fMZyFWrmTrIBzEiQ_AY
+
+{
+  "title": "House Rent",
+  "amount": "3000",
+  "category": "Bill",
+  "date": "2023-10-25",
+  "notes": ""
+}
+
+###
+
+GET http://localhost:3000/transaction/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEwNzgyNDJ9.UAJuQwlu3c2IPUiVh9HNlXv_fMZyFWrmTrIBzEiQ_AY
+
+###
+
+PUT http://localhost:3000/transaction/3
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEwNzgyNDJ9.UAJuQwlu3c2IPUiVh9HNlXv_fMZyFWrmTrIBzEiQ_AY
+
+{
+    "amount":"800"
+}
+
+###
+
+DELETE http://localhost:3000/transaction/4
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEwNzgyNDJ9.UAJuQwlu3c2IPUiVh9HNlXv_fMZyFWrmTrIBzEiQ_AY
+
+###
+
+GET http://localhost:3000/transaction/amount
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjIsImVtYWlsIjoidGVzdEBnbWFpbC5jb20iLCJpYXQiOjE3NzEwNzgyNDJ9.UAJuQwlu3c2IPUiVh9HNlXv_fMZyFWrmTrIBzEiQ_AY
